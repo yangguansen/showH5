@@ -9,7 +9,8 @@ JS库引用了zepto.js和touch模块，用来监听上下左右滑动和点击�
 1、<br>
 首先引入动画类库：<br>
 ```
-<link type="text/css" rel="stylesheet" href="http://chongqing.sinaimg.cn/images/zyhcqr/css/animate.min.css">```
+<link type="text/css" rel="stylesheet" href="http://chongqing.sinaimg.cn/images/zyhcqr/css/animate.min.css">
+```
 <br>
 然后是该模板的css样式表，也可根据自己需要进行改写：<br>
 ```
