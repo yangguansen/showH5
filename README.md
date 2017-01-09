@@ -14,12 +14,14 @@ JS库引用了zepto.js和touch模块，用来监听上下左右滑动和点击�
 <br>
 然后是该模板的css样式表，也可根据自己需要进行改写：<br>
 ```
-<link rel="stylesheet" href="showH5.css">```
+<link rel="stylesheet" href="showH5.css">
+```
 <br>
 接下来是zepto库：<br>
 ```
 <script src="http://apps.bdimg.com/libs/zepto/1.1.4/zepto.min.js"></script>
-<script src="http://chongqing.sinaimg.cn/20160616_tgxc/img/js/touch.js"></script>```
+<script src="http://chongqing.sinaimg.cn/20160616_tgxc/img/js/touch.js"></script>
+```
 <br>
 微信JS库可以用来定义分享的配图和title,目前微信浏览器不支持自动播放音乐，使用微信JS方法可hack自动播放：
 <br>
@@ -27,18 +29,21 @@ JS库引用了zepto.js和touch模块，用来监听上下左右滑动和点击�
 WeixinJSBridge.invoke('getNetworkType', {}, function(e) {
     var audio = document.getElementById('theaudio');
     audio.play();
-});```
+});
+```
 <br>
 最后是自己封装的方法库：<br>
 ```
-<script src="showH5.js"></script>```
+<script src="showH5.js"></script>
+```
 <br>
 封装了上下滑动翻页方法，首页图片加载方法，音乐播放等方法。有需要者可根据自己需求进行改写。
 <br>
 2、<br>
 其次编写页面中的html代码：把每一页的图片元素用img标签写入。<br>
 ```
-<img src="p12.png" class="pos_abs animated p12" data-class="bounceIn" data-delay="1.3s">```
+<img src="p12.png" class="pos_abs animated p12" data-class="bounceIn" data-delay="1.3s">
+```
 <br>
 每个标签class类有3个，`pos_abs`表示绝对定位，每一页的每个元素也都是使用绝对定位，方便高效。<br>
 `animated`类表示需要加入动效的元素标签。<br>
@@ -54,7 +59,8 @@ WeixinJSBridge.invoke('getNetworkType', {}, function(e) {
     <div class="pos_abs animated p14_parent">
         <img src="p14.png" class="pos_abs animated p14" data-class="fadeInUp" data-delay="3.3s" alt=""> 
     </div>
-</div>```
+</div>
+```
 <br>
 以上代码是第一页的所有图片元素，`p14`类比较特别，是因为该图片元素进入页面后，需要改变动效，循环执行下一种动效，就需要用div将其包裹，监听img标签动画执行完毕后，使div添加动画class：
 `showH5.AnimationEnd(".p14", "pulse");`第一个参数是被监听图片元素，第二个参数是入场动画完毕后，需要切换的动画类名。
@@ -65,40 +71,47 @@ WeixinJSBridge.invoke('getNetworkType', {}, function(e) {
 ```
 document.addEventListener('touchmove', function (event) {
     event.preventDefault();
-}, false);```
+}, false);
+```
 <br>
 PC端显示居中：<br>
 ```
 if(showH5.IsPC()){
     document.body.style.margin = "0px auto";
-} ```
+} 
+```
 <br>
 PC端手机模拟器调试，调整不同机型时的resize事件：<br>
 ```
 window.onresize = function(){
     showH5.viewResize();
-}```
+}
+```
 <br>
 向上滑动到下一页<br>
 ```
 $("body").swipeUp(function(){ 
     showH5.next();                
-})```
+})
+```
 <br>
 向下滑动到上一页<br>
 ```
 $("body").swipeDown(function(){ 
     showH5.last();                
-});```
+});
+```
 <br>
 自动播放音乐：<br>
 ```
-showH5.autoPlayAudio('music3.mp3');```
+showH5.autoPlayAudio('music3.mp3');
+```
 <br>
 参数为音乐地址。<br>
 如果需要为元素绑定点击事件，需用以下绑定方式：<br>
 ```
 $(document).on("tap", ".p11", function(){
 	//do something...
-})```
+})
+```
 <br>
