@@ -2,39 +2,32 @@
     var showH5 = (function(){
         return{
             num: 1,
-            divHtmlArr : [],
             total : $(".page").length,
             audio : undefined,
+            initHtml : function (){    //初始化class
+                var AnimateImg = $($(".page" + this.num)).find(".animated");
+                $(AnimateImg).each(function(index, value){
+                    var animationStyle = $(this).data("class");
+                    $(this).removeClass(animationStyle);
+                })  
+            },
             next : function(){
                 if(this.num < this.total){
                     $(".page" + this.num).addClass("fadeOut hide");
-                    this.initHtml(this.num-1, $(".page" + this.num));
+                    this.initHtml();
                     this.num++;
                     this.setAnimation(this.num);
                 }
-            },
-            setHtml : function (index,div){
-                if(!this.divHtmlArr[index]){
-                    this.divHtmlArr[index] = div; //将每一屏代码存放到数组
-                }   
-            },
-            getHtml : function (div){   //获取html代码
-                return $(div).html();
-            },
-            initHtml : function (index,div){    //初始化html代码
-                $(div).html(this.divHtmlArr[index]);
-            },
+            },                        
             last : function(){
                 if(this.num > 1){
                     $(".page" + this.num).addClass("fadeOut hide");
-                    this.initHtml(this.num-1, $(".page" + this.num));
+                    this.initHtml();
                     this.num--;
                     this.setAnimation(this.num);
                 }
-            },          
+            },           
             setAnimation : function(pageNum){
-                var html = this.getHtml($(".page" + pageNum));
-                this.setHtml(pageNum-1, html);
                 $(".page" + pageNum).removeClass("fadeOut hide");
                 var AnimateImg = $(".page" + pageNum).find(".animated");
                 $(AnimateImg).each(function(index, value){
@@ -56,8 +49,7 @@
                     if(bai == 100){
                         setTimeout(function(){
                             $(".p1_close").addClass('hide');                                
-                            showH5.setAnimation(1);
-                            
+                            showH5.setAnimation(1);                            
                         }, 500);
                         
                     }
@@ -91,13 +83,15 @@
             },
             toPage: function(num){
                 $(".page" + this.num).addClass('hide');
-                showH5.setAnimation(num);
-                showH5.num = num;
+                ff.initHtml(this.num-1, $(".page" + this.num));
+                ff.setAnimation(num);
+                ff.num = num;
             },
-            AnimationEnd : function(div, style){
+            AnimationEnd : function(div){
+                var divParent = $(div + "_parent");
+                var AnimateClass = $(divParent).data('class');
                 $(document).on("webkitAnimationEnd", div, function(e){
-                    // e.target.offsetParent.classList.add("pulse", "infinite");
-                    $(div + "_parent").addClass(style+" infinite");
+                    $(divParent).addClass(AnimateClass);
                 })                    
             },
             autoView : function (userAgent){
@@ -117,8 +111,7 @@
                     document.body.style.margin = "0px auto";
                 }
             },
-            autoPlayAudio : function (music_src) {   
-                
+            autoPlayAudio : function (music_src) {                   
                 this.playmusic(music_src);             
                 try{
                     WeixinJSBridge.invoke('getNetworkType', {}, function(e) {

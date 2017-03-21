@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="utf-8">
+	<meta charset="gb2312">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 	<meta name="format-detection"content="telephone=no">
 	<meta name="apple-mobile-web-app-capable" content="yes" />
 	<meta name="apple-mobile-web-app-status-bar-style" content="black" />
-	<title>静态展示级H5</title>
-	<meta name="Keywords" content="静态展示级H5" />
-	<meta name="description" content="静态展示级H5" />
+	<title>微信营销fullpage框架</title>
+	<meta name="Keywords" content="微信营销fullpage框架，静态展示类H5，微信朋友圈分享，showH5" />
+	<meta name="description" content="微信营销fullpage框架，静态展示类H5，微信朋友圈分享，showH5" />
     <!-- 依赖CSS库 begin -->
 	<link type="text/css" rel="stylesheet" href="http://chongqing.sinaimg.cn/images/zyhcqr/css/animate.min.css">
     <link rel="stylesheet" href="showH5.css">
@@ -20,40 +20,16 @@
 	<script src="showH5.js"></script>
     <!-- 依赖JS库 end -->
 	<style>
-    .p11{
-        top: 10px;
-        left: 70px;
-    }
-    .p12{
-        top: 90px;
-        left: 30px;
-    }
-    .p13{
-        top: 660px;
-        left: 150px;
-    }
-
-    .p14_parent{
-        width: 183px;
-        height: 169px;
-        top: 930px;
-        left: 210px;
-    }
-    .p21{
-        top: 50px;
-        left: 100px;
-    }
-    .p22{
-        top: 220px;
-        left: 30px;
-    }
-    .p23{
-        top: 220px;
-        left: 320px;
-    }
+    .p11{top:10px;left:70px;}
+    .p12{top:90px;left:30px;}
+    .p13{top:660px;left:150px;}
+    .p14_parent{width:183px;height:169px;top:930px;left:210px;}
+    .p21{top:50px;left:100px;}
+    .p22{top:220px;left:30px;}
+    .p23{top:220px;left:320px;}
 	</style>
 </head>
-<body class=" Vbody"><!-- body code begin -->
+<body class=" Vbody">
 	<div class="wrap"> 
         <!-- 加载页begin -->
         <div class="loading p1_close" id="loading">         
@@ -71,7 +47,7 @@
 			<img src="http://chongqing.sinaimg.cn/20161101_sjjd/img4/p11.png" class="pos_abs animated p11" data-class="bounceInDown" data-delay="0.3s">
             <img src="http://chongqing.sinaimg.cn/20161101_sjjd/img4/p12.png" class="pos_abs animated p12" data-class="bounceIn" data-delay="1.3s">
             <img src="http://chongqing.sinaimg.cn/20161101_sjjd/img4/p13.png" class="pos_abs animated p13" data-class="fadeInUp" data-delay="2.3s">
-            <div class="pos_abs animated p14_parent">
+            <div class="pos_abs animated p14_parent" data-class="pulse infinite">
                 <img src="http://chongqing.sinaimg.cn/20161101_sjjd/img4/p14.png" class="pos_abs animated p14" data-class="fadeInUp" data-delay="3.3s" alt=""> 
             </div>			                       
 		</div>
@@ -104,7 +80,7 @@
                 showH5.last();                
             });
                         
-            showH5.AnimationEnd(".p14", "pulse");
+            showH5.AnimationEnd(".p14");   //入场动画切换到循环动画
             
             showH5.autoPlayAudio('http://chongqing.sinaimg.cn/20161101_sjjd/music3.mp3');
             
