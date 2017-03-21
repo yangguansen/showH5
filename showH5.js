@@ -83,9 +83,9 @@
             },
             toPage: function(num){
                 $(".page" + this.num).addClass('hide');
-                ff.initHtml(this.num-1, $(".page" + this.num));
-                ff.setAnimation(num);
-                ff.num = num;
+                showH5.initHtml(this.num-1, $(".page" + this.num));
+                showH5.setAnimation(num);
+                showH5.num = num;
             },
             AnimationEnd : function(div){
                 var divParent = $(div + "_parent");
