@@ -11,20 +11,22 @@ JS库引用了zepto.js和touch模块，用来监听上下左右滑动和点击�
 首先引入动画类库：<br>
 ```javascript
 <link type="text/css" rel="stylesheet" href="http://chongqing.sinaimg.cn/images/zyhcqr/css/animate.min.css">
+```
 <br>
 模板的css样式表，也可根据自己需要进行改写：<br>
 ```
 <link type="text/css" rel="stylesheet" href="showH5.css">
+```
 <br>
 接下来是zepto库：<br>
-```javascript
+```
 <script src="http://apps.bdimg.com/libs/zepto/1.1.4/zepto.min.js"></script>
 <script src="http://chongqing.sinaimg.cn/20160616_tgxc/img/js/touch.js"></script>
 ```
 <br>
 微信JS库可以用来定义分享的配图和title,目前微信浏览器不支持自动播放音乐，使用微信JS方法可hack自动播放：
 <br>
-```javascript
+```
 WeixinJSBridge.invoke('getNetworkType', {}, function(e) {
     var audio = document.getElementById('theaudio');
     audio.play();
@@ -32,7 +34,7 @@ WeixinJSBridge.invoke('getNetworkType', {}, function(e) {
 ```
 <br>
 最后是自己封装的方法库：<br>
-```javascript
+```
 <script src="showH5.js"></script>
 ```
 <br>
@@ -40,7 +42,7 @@ WeixinJSBridge.invoke('getNetworkType', {}, function(e) {
 <br>
 2、<br>
 其次编写页面中的html代码：把每一页的图片元素用img标签写入。<br>
-```javascript
+```
 <img src="p12.png" class="pos_abs animated p12" data-class="bounceIn" data-delay="1.3s">
 ```
 <br>
@@ -50,7 +52,7 @@ WeixinJSBridge.invoke('getNetworkType', {}, function(e) {
 `data-class`表示动效名称；<br>
 `data-delay`表示**进入此页后**，延时多久出现该元素<br>
 2、<br>
-```html
+```
 <div class="page page1 animated fadeIn hide">						
 	<img src="p11.png" class="pos_abs animated p11" data-class="bounceInDown" data-delay="0.3s">
     <img src="p12.png" class="pos_abs animated p12" data-class="bounceIn" data-delay="1.3s">
