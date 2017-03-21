@@ -12,11 +12,11 @@ JS库引用了zepto.js和touch模块，用来监听上下左右滑动和点击�
 ```
 <link type="text/css" rel="stylesheet" href="http://chongqing.sinaimg.cn/images/zyhcqr/css/animate.min.css">
 ```
-<br>
 模板的css样式表，也可根据自己需要进行改写:
-    <link type="text/css" rel="stylesheet" href="showH5.css">
 <br>
-接下来是zepto库：<br>
+<link type="text/css" rel="stylesheet" href="showH5.css">
+<br>
+接下来是zepto库：
 ```
 <script src="http://apps.bdimg.com/libs/zepto/1.1.4/zepto.min.js"></script>
 <script src="http://chongqing.sinaimg.cn/20160616_tgxc/img/js/touch.js"></script>
@@ -31,7 +31,8 @@ WeixinJSBridge.invoke('getNetworkType', {}, function(e) {
 });
 ```
 <br>
-最后是自己封装的方法库：<br>
+最后是自己封装的方法库：
+<br>
 ```
 <script src="showH5.js"></script>
 ```
@@ -39,7 +40,8 @@ WeixinJSBridge.invoke('getNetworkType', {}, function(e) {
 封装了上下滑动翻页方法，首页图片加载方法，音乐播放等方法。
 <br>
 2、<br>
-其次编写页面中的html代码：把每一页的图片元素用img标签写入。<br>
+其次编写页面中的html代码：把每一页的图片元素用img标签写入。
+<br>
 ```
 <img src="p12.png" class="pos_abs animated p12" data-class="bounceIn" data-delay="1.3s">
 ```
@@ -66,7 +68,8 @@ WeixinJSBridge.invoke('getNetworkType', {}, function(e) {
 <br>
 3、<br>
 预先加载图片：`showH5.loadImg();`<br>
-在手机端如果需要单页禁止滑动，就禁止浏览器默认滑动事件：<br>
+在手机端如果需要单页禁止滑动，就禁止浏览器默认滑动事件：
+<br>
 ```
 document.addEventListener('touchmove', function (event) {
     event.preventDefault();
@@ -80,7 +83,8 @@ if(showH5.IsPC()){
 } 
 ```
 <br>
-PC端手机模拟器调试，调整不同机型时的resize事件：<br>
+PC端手机模拟器调试，调整不同机型时的resize事件：
+<br>
 ```
 window.onresize = function(){
     showH5.viewResize();
