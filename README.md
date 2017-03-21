@@ -13,7 +13,7 @@ JS库引用了zepto.js和touch模块，用来监听上下左右滑动和点击�
 <link type="text/css" rel="stylesheet" href="http://chongqing.sinaimg.cn/images/zyhcqr/css/animate.min.css">
 ```
 <br>
-模板的css样式表，也可根据自己需要进行改写：<br>
+模板的css样式表，也可根据自己需要进行改写:
     <link type="text/css" rel="stylesheet" href="showH5.css">
 <br>
 接下来是zepto库：<br>
