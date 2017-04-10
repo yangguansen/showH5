@@ -7,9 +7,12 @@ CSS动效库引用的是animate.css，该库封装了丰富的动画效果。也
 JS库引用了zepto.js和touch模块，用来监听上下左右滑动和点击事件。如果项目中有需要前后端交互事件，也可以直接使用zepto中的ajax方法。
 
 项目demo：[链接](http://cq.sina.com.cn/3/201703/323.html),也可在浏览器手机调试中查看效果
+
 代码介绍：
+
 1、
 首先引入动画类库：
+
 ``` bash
 <link type="text/css" rel="stylesheet" href="http://chongqing.sinaimg.cn/images/zyhcqr/css/animate.min.css">
 ```
