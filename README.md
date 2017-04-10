@@ -6,7 +6,7 @@ CSS动效库引用的是animate.css，该库封装了丰富的动画效果。也
 手指滑动事件可以自己通过touchmove封装成上下滑动事件，但是基于此类需求都是建立在快速开发的基础上，所以便使用了zepto的手势库和选择器等方法。<br>
 JS库引用了zepto.js和touch模块，用来监听上下左右滑动和点击事件。如果项目中有需要前后端交互事件，也可以直接使用zepto中的ajax方法。
 
-    项目demo：[链接](http://cq.sina.com.cn/3/201703/323.html),也可在浏览器手机调试中查看效果
+项目demo：[链接](http://cq.sina.com.cn/3/201703/323.html),也可在浏览器手机调试中查看效果
 代码介绍：
 1、
 首先引入动画类库：
@@ -50,14 +50,17 @@ WeixinJSBridge.invoke('getNetworkType', {}, function(e) {
 
 每个标签class类有3个，`pos_abs`表示绝对定位，每一页的每个元素也都是使用绝对定位，定位时可直接使用`top`,`left`进行定位方便高效。
  `animated`类表示对需要加入动效的元素进行标记。
+ 
 `p12`是自己根据需要用来对img标签进行样式编写，比如`top` `left`。
+
 `data-class`表示动效名称；
+
 `data-delay`表示**进入此页后**，延时多久出现该元素
 
 2、
 ``` html
-<div class="page page1 animated fadeIn hide">			
-	<img src="p11.png" class="pos_abs animated p11" data-class="bounceInDown" data-delay="0.3s">
+<div class="page page1 animated fadeIn hide">
+    <img src="p11.png" class="pos_abs animated p11" data-class="bounceInDown" data-delay="0.3s">
     <img src="p12.png" class="pos_abs animated p12" data-class="bounceIn" data-delay="1.3s">
     <img src="p13.png" class="pos_abs animated p13" data-class="fadeInUp" data-delay="2.3s">
     <div class="pos_abs animated p14_parent" data-class="pulse infinite">
