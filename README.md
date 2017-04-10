@@ -1,4 +1,4 @@
-# showH5
+﻿# showH5
 
 > 项目介绍：<br>
 这个项目是自己封装,用于搭建的基于手机端应用的微信营销、fullpage、静态展示类H5模板，每一个页面可放多个图片元素产生入场动画，应用于活动推广运营之类。本库为开源库，欢迎fork，提PR。有哪里写得不好的地方，还望大家指出，便于相互交流学习。<br>
@@ -75,46 +75,45 @@ document.addEventListener('touchmove', function (event) {
     event.preventDefault();
 }, false);
 ```
-<br>
-PC端显示居中：<br>
+
+PC端显示居中：
 ``` bash
 if(showH5.IsPC()){
     document.body.style.margin = "0px auto";
 } 
 ```
-<br>
+
 PC端手机模拟器调试，调整不同机型时的resize事件：
-<br>
+
 ``` bash
 window.onresize = function(){
     showH5.viewResize();
 }
 ```
-<br>
+
 向上滑动到下一页<br>
 ``` bash
 $("body").swipeUp(function(){ 
     showH5.next();                
 })
 ```
-<br>
+
 向下滑动到上一页<br>
 ``` bash
 $("body").swipeDown(function(){ 
     showH5.last();                
 });
 ```
-<br>
+
 自动播放音乐：<br>
 ``` bash
 showH5.autoPlayAudio('music3.mp3');
 ```
-<br>
-参数为音乐地址。<br>
+
+参数为音乐地址。
 如果需要为元素绑定点击事件，需用以下绑定方式：<br>
 ``` bash
 $(".p16").tap(function(){
     //你的事件代码...
 })
 ```
-<br>
